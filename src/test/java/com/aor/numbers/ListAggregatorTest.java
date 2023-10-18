@@ -9,7 +9,7 @@ import java.util.List;
 public class ListAggregatorTest {
     @Test
     public void sum() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
+        List<Integer> list = helper();
 
         ListAggregator aggregator = new ListAggregator();
         int sum = aggregator.sum(list);
@@ -19,7 +19,7 @@ public class ListAggregatorTest {
 
     @Test
     public void max() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
+        List<Integer> list = helper();
 
         ListAggregator aggregator = new ListAggregator();
         int max = aggregator.max(list);
@@ -29,7 +29,7 @@ public class ListAggregatorTest {
 
     @Test
     public void min() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
+        List<Integer> list = helper();
 
         ListAggregator aggregator = new ListAggregator();
         int min = aggregator.min(list);
@@ -39,11 +39,15 @@ public class ListAggregatorTest {
 
     @Test
     public void distinct() {
-        List<Integer> list = Arrays.asList(1,2,4,2,5);
+        List<Integer> list = helper();
 
         ListAggregator aggregator = new ListAggregator();
         int distinct = aggregator.distinct(list);
 
         Assertions.assertEquals(4, distinct);
+    }
+
+    public List<Integer> helper() {
+        return Arrays.asList(1,2,4,2,5);
     }
 }
